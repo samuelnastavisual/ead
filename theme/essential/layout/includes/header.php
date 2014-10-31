@@ -47,6 +47,23 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
+<div class="header">
+    <div class="logo"><a href="http://10.1.70.142/2013/siganet.cgi"><img src="<?php echo $OUTPUT->pix_url('siganet/siganet', 'theme'); ?>"></a></div>
+    <div class="sistema sistemaselecionado"><a href="#" class="sistemaLink" name="selectSuper"><img src="<?php echo $OUTPUT->pix_url('siganet/supervisao', 'theme'); ?>">Supervisor</a></div>
+    <div class="sistema"><a href="#" class="sistemaLink" name="selectGuiche"><img src="<?php echo $OUTPUT->pix_url('siganet/guiche', 'theme'); ?>">PC-Guichê</a></div>
+    <div class="sistema"><a href="#" class="sistemaLink" name="selectEmissor"><img src="<?php echo $OUTPUT->pix_url('siganet/emissor', 'theme'); ?>">Emissor</a></div>
+    <div class="sistema"><a href="#" class="sistemaLink" name="selectEad"><img src="<?php echo $OUTPUT->pix_url('siganet/ead', 'theme'); ?>" height="38" width="38">EaD</a></div>
+    <div class="sistema"><a href="#" class="sistemaLink" ><img src="<?php echo $OUTPUT->pix_url('siganet/ajuda_menor', 'theme'); ?>">Ajuda</div></a>
+</div>
+
+<div class="sidebar1">
+    <div class="mainBotao"><a href="#" id="asb" class="mainBotaoLink"><img src="<?php echo $OUTPUT->pix_url('siganet/meus_documentos', 'theme'); ?>">Alterar Senha</a></div>
+    <br class="clearfloat">
+    <div class="mainBotao"><a href="#" id="msgb" class="mainBotaoLink"><img src="<?php echo $OUTPUT->pix_url('siganet/mensagens', 'theme'); ?>">Mensagens</a></div>
+    <br class="clearfloat">
+    <div class="mainBotao"><a href="#" id="dscb" class="mainBotaoLink"><img src="<?php echo $OUTPUT->pix_url('siganet/sair_menor', 'theme'); ?>">Sair</a></div>
+</div>
+
 
 <header role="banner">
     <div id="page-header" class="clearfix<?php echo ($oldnavbar) ? ' oldnavbar' : ''; ?>">
