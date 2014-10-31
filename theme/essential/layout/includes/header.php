@@ -58,9 +58,7 @@ echo $OUTPUT->doctype() ?>
 
 <div class="sidebar1">
     <div class="mainBotao"><a href="#" id="asb" class="mainBotaoLink"><img src="<?php echo $OUTPUT->pix_url('siganet/meus_documentos', 'theme'); ?>">Alterar Senha</a></div>
-    <br class="clearfloat">
     <div class="mainBotao"><a href="#" id="msgb" class="mainBotaoLink"><img src="<?php echo $OUTPUT->pix_url('siganet/mensagens', 'theme'); ?>">Mensagens</a></div>
-    <br class="clearfloat">
     <div class="mainBotao"><a href="#" id="dscb" class="mainBotaoLink"><img src="<?php echo $OUTPUT->pix_url('siganet/sair_menor', 'theme'); ?>">Sair</a></div>
 </div>
 
