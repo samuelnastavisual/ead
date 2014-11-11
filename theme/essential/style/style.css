@@ -32,6 +32,9 @@ h1, h3 {
 .course-content li {
 	background: none !important;
 }
+.dropdown-menu li:hover {
+	background: #199abe;
+}
 body > .header {
 	background-image: linear-gradient(bottom, rgb(204,204,204) 0%, rgb(148,146,148) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(204,204,204) 0%, rgb(148,146,148) 100%);
@@ -84,7 +87,7 @@ body > .header {
 	background: transparent;
 }
 .row-fluid .span3 {
-	width: 24.2%;
+	/*width: 24.2%;*/
 }
 .sidebar1 {
 	clear: both;
