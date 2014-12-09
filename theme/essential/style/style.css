@@ -43,12 +43,14 @@ input[type=submit] {
 
 /* CLASSES */
 
-.block {
+.block, .mediafile.block_fake {
 	background-color: #E9E9E9;
     border: 1px solid #000;
+    border-radius: 6px;
+    margin-bottom: 1em;
     padding: 2px;
 }
-.block a:hover {
+.block a:hover, .mediafile.block_fake a:hover {
     color: inherit;
 }
 .block_tree ul li, input[type=submit], #searchforums {
@@ -64,7 +66,6 @@ input[type=submit] {
 .block_tree ul li a {
     color: #fff;
     display: inline-block;
-    min-width: 150px;
 }
 .block_tree ul li:hover, input[type=submit]:hover {
     background-color: #fdc333 !important;
@@ -105,6 +106,11 @@ input[type=submit] {
     border: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
+}
+.coursename {
+    border-bottom: 1px solid #ccc;
+    margin-top: 30px !important;
+    padding-bottom: 5px !important;
 }
 .course-content li {
 	background: none !important;
@@ -183,6 +189,9 @@ body > .header {
 .mainBotao img, .sistema img {
 	display: block;
 	margin: 0 auto;
+}
+.mediafile.block_fake .content {
+    padding: 4px;
 }
 .navbar-inner {
 	background: transparent;
