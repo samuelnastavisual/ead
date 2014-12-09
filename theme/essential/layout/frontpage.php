@@ -24,7 +24,19 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(__FILE__) . '/includes/header.php');?>
+require_once(dirname(__FILE__) . '/includes/header.php');
+
+$enable1alert = theme_essential_get_setting('enable1alert');
+$enable2alert = theme_essential_get_setting('enable2alert');
+$enable3alert = theme_essential_get_setting('enable3alert');
+
+if ($enable1alert || $enable2alert || $enable3alert) {
+    $alertinfo = '<span class="fa-stack "><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-info fa-stack-1x fa-inverse"></i></span>';
+    $alerterror = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-warning fa-stack-1x fa-inverse"></i></span>';
+    $alertsuccess = '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></span>';
+}
+
+?>
 
 <div id="page" class="container-fluid">
     <section class="slideshow">
@@ -47,7 +59,7 @@ require_once(dirname(__FILE__) . '/includes/header.php');?>
         <!-- Start Alerts -->
 
         <!-- Alert #1 -->
-        <?php if (theme_essential_get_setting('enable1alert')) { ?>
+        <?php if ($enable1alert) { ?>
             <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert1type') ?>">
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
@@ -57,7 +69,7 @@ require_once(dirname(__FILE__) . '/includes/header.php');?>
         <?php } ?>
 
         <!-- Alert #2 -->
-        <?php if (theme_essential_get_setting('enable2alert')) { ?>
+        <?php if ($enable2alert) { ?>
             <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert2type') ?>">
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php
@@ -67,7 +79,7 @@ require_once(dirname(__FILE__) . '/includes/header.php');?>
         <?php } ?>
 
         <!-- Alert #3 -->
-        <?php if (theme_essential_get_setting('enable3alert')) { ?>
+        <?php if ($enable3alert) { ?>
             <div class="useralerts alert alert-<?php echo theme_essential_get_setting('alert3type') ?>">
                 <a class="close" data-dismiss="alert" href="#"><i class="fa fa-times-circle"></i></a>
                 <?php

@@ -29,6 +29,7 @@ if (empty($PAGE->layout_options['nofooter'])) {
     <footer role="contentinfo" id="page-footer">
         <div class="container-fluid">
             <?php echo theme_essential_edit_button('theme_essential_footer'); ?>
+<!--
             <div class="row-fluid footerblocks">
                 <div class="span4 pull-left">
                     <div class="column">
@@ -46,8 +47,9 @@ if (empty($PAGE->layout_options['nofooter'])) {
                     </div>
                 </div>
             </div>
+-->
             <div class="footerlinks row-fluid">
-                <hr/>
+                <!--<hr/>-->
                 <span class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></span>
                 <?php if ($hascopyright) { ?>
                     <span class="copy">&copy;<?php echo date("Y") . ' ' . $hascopyright; ?></span>
@@ -82,15 +84,21 @@ if (empty($PAGE->layout_options['nofooter'])) {
                 return false;
             });
 
-            jQuery('#essentialnavbar').affix({
-                offset: {
-                    top: $('header').height()
-                }
-            });
-            <?php if ($breadcrumbanimate == '1') {
-                echo "$('.breadcrumb').jBreadCrumb();";
-            }?>
-            $('#page-site-index').fitVids();
+            <?php
+            if (theme_essential_not_lte_ie9()) {
+              echo "jQuery('#essentialnavbar').affix({";
+              echo "offset: {";
+              echo "top: $('#page-header').height()";
+              echo "}";
+              echo "});";
+              if ($breadcrumbstyle == '1') {
+                  echo "$('.breadcrumb').jBreadCrumb();";
+              }
+            }
+            if (theme_essential_get_setting('fitvids')) {
+                echo "$('#page').fitVids();";
+            }
+            ?>
         });
     </script>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>

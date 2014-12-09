@@ -38,27 +38,23 @@ require_once(dirname(__FILE__) . '/includes/header.php'); ?>
         <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="span12">
                 <div class="row-fluid">
-                    <?php if ($left) { ?>
-                    <section id="region-main" class="span9 pull-right">
-                        <?php } else { ?>
-                        <section id="region-main" class="span9 desktop-first-column">
-                            <?php } ?>
-                            <?php if ($COURSE->id > 1) {
-                                echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
-                                echo '<div class="bor"></div>';
-                            } ?>
-                            <?php echo $OUTPUT->course_content_header(); ?>
-                            <?php echo $OUTPUT->main_content(); ?>
-                            <?php if (empty($PAGE->layout_options['nocoursefooter'])) {
-                                echo $OUTPUT->course_content_footer();
-                            }?>
-                        </section>
-                        <?php if ($left) { ?>
-                            <?php echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column'); ?>
-                        <?php } else { ?>
-                            <?php echo $OUTPUT->blocks('side-pre', 'span3 pull-right'); ?>
-                        <?php } ?>
+                    <section id="region-main" class="span12">
+                    <?php
+                    if (($COURSE->id > 1) && (essential_report_page_has_title() == true)) {
+                        echo $OUTPUT->heading(format_string($COURSE->fullname), 1, 'coursetitle');
+                        echo '<div class="bor"></div>';
+                    }
+                    echo $OUTPUT->course_content_header();
+                    echo $OUTPUT->main_content();
+                    if (empty($PAGE->layout_options['nocoursefooter'])) {
+                        echo $OUTPUT->course_content_footer();
+                    }
+                    ?>
+                    </section>
                 </div>
+                <?php 
+                echo $OUTPUT->essential_blocks('side-pre', 'row-fluid', 'aside', 4);
+                ?>
             </div>
         </div>
         <!-- End Main Regions -->
